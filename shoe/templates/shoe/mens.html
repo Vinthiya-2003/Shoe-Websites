@@ -1,0 +1,350 @@
+{% extends 'shoe/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container my-3">
+
+  <!-- Top row: Filters and Sort by -->
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <button id="filterBtn" class="btn btn-link px-0" style="font-weight:bold; font-size:1.2em;">
+      Filters &rarr;
+    </button>
+    <button class="btn btn-secondary">Sort by</button>
+  </div>
+
+  <!-- Filter Row (hidden by default) -->
+  <div id="filtersRow" class="d-flex align-items-center gap-2 mb-3" style="display:none;">
+    <button class="btn btn-outline-dark" id="styleBtn" type="button">Style</button>
+    <button class="btn btn-outline-dark" id="sizeBtn" type="button">Size</button>
+    <button class="btn btn-outline-dark" id="brandBtn" type="button">Brand</button>
+    <button class="btn btn-outline-dark" id="colourBtn" type="button">Colour</button>
+    <button class="btn btn-link ms-auto px-3" id="closeFilters" title="Close" style="font-size:1.4em;">&larr;</button>
+  </div>
+
+  <!-- Dropdowns (only Style shown at first click for example) -->
+  <div id="styleDropdown" class="dropdown-menu show mb-2" style="position:static;display:none;">
+    <button class="dropdown-item">New Arrivals</button>
+    <button class="dropdown-item">Sandals</button>
+    <button class="dropdown-item">Trainers</button>
+    <button class="dropdown-item">Boots</button>
+    <button class="dropdown-item">Slippers</button>
+    <button class="dropdown-item">Canvas</button>
+    <button class="dropdown-item">Summer Shop</button>
+  </div>
+  <div id="sizeDropdown" class="dropdown-menu show mb-2" style="position:static;display:none;">
+    <div class="dropdown-header">Junior</div>
+    <button class="dropdown-item">UK(3)</button>
+    <button class="dropdown-item">UK(4)</button>
+    <div class="dropdown-header">Adult</div>
+    <button class="dropdown-item">UK(3)</button>
+    <button class="dropdown-item">UK(4)</button>
+    <button class="dropdown-item">UK(5)</button>
+    <button class="dropdown-item">UK(6)</button>
+    <button class="dropdown-item">UK(7)</button>
+  </div>
+  <div id="brandDropdown" class="dropdown-menu show mb-2" style="position:static;display:none;">
+    <button class="dropdown-item">Becket</button>
+    <button class="dropdown-item">Comfy Steps</button>
+    <button class="dropdown-item">Kickers</button>
+    <button class="dropdown-item">Lambretta</button>
+    <button class="dropdown-item">Marvel</button>
+    <button class="dropdown-item">Skechers</button>
+    <button class="dropdown-item">Totes</button>
+  </div>
+  <div id="colourDropdown" class="dropdown-menu show mb-2" style="position:static;display:none;">
+    <button class="dropdown-item"><span class="badge bg-dark me-2">&nbsp;</span>Black</button>
+    <button class="dropdown-item"><span class="badge bg-primary me-2">&nbsp;</span>Blue</button>
+    <button class="dropdown-item"><span class="badge bg-warning me-2">&nbsp;</span>Yellow</button>
+    <button class="dropdown-item"><span class="badge bg-success me-2">&nbsp;</span>Green</button>
+    <button class="dropdown-item"><span class="badge bg-danger me-2">&nbsp;</span>Red</button>
+    <button class="dropdown-item"><span class="badge" style="background:#fd7e14">&nbsp;</span>Orange</button>
+    <button class="dropdown-item"><span class="badge bg-secondary me-2">&nbsp;</span>Grey</button>
+    <button class="dropdown-item"><span class="badge" style="background:#fff;border:1px solid #999">&nbsp;</span>White</button>
+    <button class="dropdown-item"><span class="badge" style="background:#795548">&nbsp;</span>Brown</button>
+  </div>
+
+
+
+  
+    
+  
+<div class="container py-3">
+
+  <!-- Filter and Sort bar -->
+  
+  <!-- Product Grid -->
+  <div class="row row-cols-1 row-cols-md-4 g-3">
+
+    <!-- Row 1 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m1.png' %}" class="card-img-top" alt="Comfy Steps">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Comfy Steps</h6>
+          <p class="small mb-1">Harlem Mens Tan Boat Shoe</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <div class="mb-1"><small>MRP ₹2099</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-brown"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m2.png' %}" class="card-img-top" alt="XL Trainer">
+        <div class="card-body">
+          <h6 class="card-title mb-1">XL</h6>
+          <p class="small mb-1">Women White Lace Up Trainer</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <div class="mb-1"><small>MRP ₹1299</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-black"></span>
+          <span class="color-dot color-blue"></span>
+          <span class="color-dot color-red"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m3.png' %}" class="card-img-top" alt="Double Strap Sandals">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Double Strap Sandals</h6>
+          <p class="small mb-1">&nbsp;</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+          <div class="mb-1"><small>MRP ₹2099</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-brown"></span>
+          <span class="color-dot color-black"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m4.png' %}" class="card-img-top" alt="Comfy Steps Slippers">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Comfy Steps</h6>
+          <p class="small mb-1">Leather white leather slippers</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="mb-1"><small>MRP ₹1995</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-white" style="border:1px solid #bbb;"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m5.png' %}" class="card-img-top" alt="Ossa Trainer">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Ossa</h6>
+          <p class="small mb-1">Neptune Mens Lace Up Trainer</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <div class="mb-1"><small>MRP ₹2999</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-blue"></span>
+          <span class="color-dot color-black"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m6.png' %}" class="card-img-top" alt="Mateo Leather Sneakers">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Mateo Leather Lace-up Sneakers</h6>
+          <p class="small mb-1">&nbsp;</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <div class="mb-1"><small>MRP ₹3999</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-brown"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m7.png' %}" class="card-img-top" alt="Urban Territory Black Boots">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Urban Territory</h6>
+          <p class="small mb-1">Stonewashed Black Warm Boots</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="mb-1"><small>MRP ₹2999</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-black"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m8.png' %}" class="card-img-top" alt="Urban Territory Boot">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Urban Territory</h6>
+          <p class="small mb-1">Bill brown Mens Leather Up Boot</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+          <div class="mb-1"><small>MRP ₹1999</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-brown"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m9.png' %}" class="card-img-top" alt="Leather Ethnic Sandals">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Leather Ethnic Sandals</h6>
+          <p class="small mb-1">&nbsp;</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <div class="mb-1"><small>MRP ₹2495</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-brown"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m10.png' %}" class="card-img-top" alt="Herfa hand painted tan leather sandals">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Herfa hand painted tan leather sandals</h6>
+          <p class="small mb-1">&nbsp;</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <div class="mb-1"><small>MRP ₹3499</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-brown"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m11.png' %}" class="card-img-top" alt="Lucas luxury leather loafers">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Lucas luxury leather loafers</h6>
+          <p class="small mb-1">&nbsp;</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="mb-1"><small>MRP ₹3999</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-black"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'image/m12.png' %}" class="card-img-top" alt="Letore tan leather formal loafers">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Letore tan leather formal loafers</h6>
+          <p class="small mb-1">&nbsp;</p>
+          <div class="text-warning mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="mb-1"><small>MRP ₹2999</small></div>
+          <small>Color:</small>
+          <span class="color-dot color-brown"></span>
+          <div class="mt-2 d-flex gap-1">
+            <button class="btn btn-sm btn-outline-primary btn-buy">Buy</button>
+            <button class="btn btn-sm btn-success">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-end mt-3">
+    <button class="btn btn-dark">View all</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+  // Show filters row when Filters is clicked
+  document.getElementById('filterBtn').onclick = function() {
+    document.getElementById('filtersRow').style.display = 'flex';
+    this.style.visibility = 'hidden';
+  };
+  // Hide all dropdowns
+  function hideAllDropdowns() {
+    document.getElementById('styleDropdown').style.display = 'none';
+    document.getElementById('sizeDropdown').style.display = 'none';
+    document.getElementById('brandDropdown').style.display = 'none';
+    document.getElementById('colourDropdown').style.display = 'none';
+  }
+  // Toggle Style dropdown only
+  document.getElementById('styleBtn').onclick = function() {
+    hideAllDropdowns();
+    var dd = document.getElementById('styleDropdown');
+    dd.style.display = (dd.style.display === 'block') ? 'none' : 'block';
+  };
+  document.getElementById('sizeBtn').onclick = function() {
+    hideAllDropdowns();
+    var dd = document.getElementById('sizeDropdown');
+    dd.style.display = (dd.style.display === 'block') ? 'none' : 'block';
+  };
+  document.getElementById('brandBtn').onclick = function() {
+    hideAllDropdowns();
+    var dd = document.getElementById('brandDropdown');
+    dd.style.display = (dd.style.display === 'block') ? 'none' : 'block';
+  };
+  document.getElementById('colourBtn').onclick = function() {
+    hideAllDropdowns();
+    var dd = document.getElementById('colourDropdown');
+    dd.style.display = (dd.style.display === 'block') ? 'none' : 'block';
+  };
+  // Close/Hide the filter row
+  document.getElementById('closeFilters').onclick = function() {
+    document.getElementById('filtersRow').style.display = 'none';
+    hideAllDropdowns();
+    document.getElementById('filterBtn').style.visibility = 'visible';
+  };
+  // Optional: Hide dropdowns when clicking outside
+  window.onclick = function(event) {
+    if (!event.target.matches('.btn-outline-dark')) {
+      hideAllDropdowns();
+    }
+  }
+</script>
+
+{% endblock %}

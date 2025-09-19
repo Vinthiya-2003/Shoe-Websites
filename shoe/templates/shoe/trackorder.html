@@ -1,0 +1,82 @@
+{% extends 'shoe/base.html' %}
+{% load static %}
+
+{% block title %}Your Order{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center my-5">
+  <div class="bg-white shadow" style="max-width:420px;width:100%;border-radius:12px;border:1.5px solid #bbb;">
+    <div class="p-3">
+      <div class="d-flex align-items-center mb-2">
+        <a href="#" onclick="window.history.back();"><i class="bi bi-arrow-left fs-5 me-2"></i></a>
+        <span class="fs-4 fw-semibold">Your Order</span>
+        <span class="ms-auto small text-muted">Order no <b>#Bh2300006</b></span>
+      </div>
+      <div class="d-flex align-items-start mb-2">
+        <img src="{% static 'image/shoes.jpg' %}" width="80" class="rounded me-3" alt="Comfy Steps">
+        <div>
+          <div class="fw-bold">Comfy Steps<br><span class="small fw-normal">Harlan Mens Tan Boat Shoe</span></div>
+          <div class="small text-muted">Exp : Delivery by sun, May 31</div>
+        </div>
+        <span class="ms-auto small text-muted">Cash on Delivery ₹ 2,799</span>
+      </div>
+    </div>
+    <div class="bg-light px-4 py-4" style="border-radius:10px;">
+      <!-- Timeline -->
+      <div class="position-relative">
+        <!-- Order Placed -->
+        <div class="d-flex align-items-start mb-4">
+          <div class="position-relative text-center me-3" style="width:45px;">
+            <span class="d-inline-flex align-items-center justify-content-center rounded-circle" style="background:#34534a;width:38px;height:38px;">
+              <i class="bi bi-cart fw-bold text-white fs-4"></i>
+            </span>
+            <div style="height:60px;width:2px;margin:auto;background:#34534a;position:absolute;top:38px;left:50%;transform:translateX(-50%);"></div>
+          </div>
+          <div>
+            <div class="fw-bold">Order Placed</div>
+            <div class="text-secondary small">May 21,2025 | 03:45 pm</div>
+          </div>
+        </div>
+        <!-- Order Dispatched -->
+        <div class="d-flex align-items-start mb-4">
+          <div class="position-relative text-center me-3" style="width:45px;">
+            <span class="d-inline-flex align-items-center justify-content-center rounded-circle" style="background:#34534a;width:38px;height:38px;">
+              <i class="bi bi-house-door fw-bold text-white fs-4"></i>
+            </span>
+            <div style="height:60px;width:2px;margin:auto;background:#34534a;position:absolute;top:38px;left:50%;transform:translateX(-50%);"></div>
+          </div>
+          <div>
+            <div class="fw-bold">Order Dispatched</div>
+            <div class="text-secondary small">May 22,2025 | 11:45 am</div>
+          </div>
+        </div>
+        <!-- Order in Transit -->
+        <div class="d-flex align-items-start mb-4">
+          <div class="position-relative text-center me-3" style="width:45px;">
+            <span class="d-inline-flex align-items-center justify-content-center rounded-circle" style="background:#34534a;width:38px;height:38px;">
+              <i class="bi bi-truck fw-bold text-white fs-4"></i>
+            </span>
+            <div style="height:60px;width:2px;margin:auto;background:#c2c2c2;position:absolute;top:38px;left:50%;transform:translateX(-50%);"></div>
+          </div>
+          <div>
+            <div class="fw-bold">Order in transit</div>
+            <div class="text-secondary small">Reached at Tenkasi, Post office</div>
+          </div>
+        </div>
+        <!-- Delivered -->
+        <div class="d-flex align-items-start">
+          <div class="position-relative text-center me-3" style="width:45px;">
+            <span class="d-inline-flex align-items-center justify-content-center rounded-circle" style="background:#c2c2c2;width:38px;height:38px;">
+              <i class="bi bi-hand-thumbs-up fw-bold text-white fs-4"></i>
+            </span>
+          </div>
+          <div>
+            <div class="fw-bold text-secondary">Delivered successfully</div>
+            <div class="small text-muted">Not delivered yet</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

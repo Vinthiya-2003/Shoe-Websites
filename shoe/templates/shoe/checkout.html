@@ -1,0 +1,111 @@
+{% extends 'shoe/base.html' %}
+{% load static %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center my-5">
+  <div class="col-md-4 p-4" style="background:#34534a;border-top-left-radius:12px;border-bottom-left-radius:12px;">
+    <h4 class="fw-bold text-light mb-3">Order Summary</h4>
+    <img src="{% static 'image/shoes.jpg' %}" class="img-fluid rounded mb-3" alt="Comfy Steps">
+    <div class="text-light fw-bold">Comfy Steps<br>
+      <span class="fw-normal small">Harlan Mens Tan Boat Shoe</span>
+      <div class="small">Size <span class="ms-2">41</span></div>
+      <div class="small">Quantity <span class="ms-2">1</span></div>
+      <div class="small">MRP <span class="ms-2">₹ 2,799</span></div>
+    </div>
+    <hr class="bg-light">
+    <div class="text-light mb-2">Amount <span class="float-end">₹ 2,799</span></div>
+    <div class="text-light mb-2">Delivery fees <span class="float-end">Free</span></div>
+    <hr class="bg-light">
+    <div class="text-light fw-bold">Total <span class="float-end">₹ 2,799</span></div>
+  </div>
+  <div class="col-md-8 p-4" style="background:#f7f7f7;border-top-right-radius:12px;border-bottom-right-radius:12px;">
+    <h4 class="mb-4 fw-bold text-center">Complete Your Order</h4>
+    <form method="post" action="{% url 'thanks' %}">
+      {% csrf_token %}
+      <div class="row mb-2">
+        <div class="col">
+          <label class="fw-bold">First Name</label>
+          <input type="text" class="form-control" placeholder="Enter your first name">
+        </div>
+        <div class="col">
+          <label class="fw-bold">Last Name</label>
+          <input type="text" class="form-control" placeholder="Enter your last name">
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <label class="fw-bold">Email id</label>
+          <input type="email" class="form-control" placeholder="Enter your email">
+        </div>
+        <div class="col">
+          <label class="fw-bold">Phone Number</label>
+          <input type="text" class="form-control" placeholder="Enter your phone no">
+        </div>
+      </div>
+      <h6 class="fw-bold mt-3 mb-1">Payment Details</h6>
+      <div class="mb-2" style="word-spacing:10px;">
+        <img src="https://seeklogo.com/images/V/visa-logo-6F4057663D-seeklogo.com.png" width="48" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width="28"/>
+        <span class="fw-bold text-primary">Pay</span><span style="color:#253b80;">Pal</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Clearpay_logo.svg" width="64"/>
+        <img src="https://logos-download.com/wp-content/uploads/2021/01/Klarna_Logo-700x162.png" width="65"/>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <label>Card Holder Name</label>
+          <input type="text" class="form-control" placeholder="Enter name">
+        </div>
+        <div class="col">
+          <label>Card Number</label>
+          <input type="text" class="form-control" placeholder="Enter card number">
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <label>CVV</label>
+          <input type="text" class="form-control" placeholder="Example: 439">
+        </div>
+        <div class="col">
+          <label>Expiration Date</label>
+          <input type="text" class="form-control" placeholder="MM/YY">
+        </div>
+      </div>
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="cod">
+        <label class="form-check-label" for="cod">Cash on Delivery</label>
+      </div>
+      <h6 class="fw-bold mt-4 mb-1">Shipping Address</h6>
+      <div class="mb-2">
+        <label>Address Line 1</label>
+        <input type="text" class="form-control" placeholder="Enter your address">
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <label>City</label>
+          <input type="text" class="form-control" placeholder="Your city">
+        </div>
+        <div class="col">
+          <label>State</label>
+          <input type="text" class="form-control" placeholder="Your state">
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <label>Landmark</label>
+          <input type="text" class="form-control" placeholder="Any landmark">
+        </div>
+        <div class="col">
+          <label>Pincode</label>
+          <input type="text" class="form-control" placeholder="Code">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between mt-4">
+        <button type="button" class="btn btn-light w-25 py-2 fw-bold" style="background:#e5e5e5;">Cancel</button>
+        <button type="submit" class="btn btn-dark w-25 py-2 fw-bold" style="background:#34534a;">Order Now</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

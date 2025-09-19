@@ -1,0 +1,63 @@
+{% extends 'shoe/base.html' %}
+{% load static %}
+
+{% block title %}Your Cart{% endblock %}
+
+{% block content %}
+<div class="container my-5" style="max-width:750px;">
+    <h2 class="text-center mb-4">Your Cart</h2>
+    <a href="/" class="fw-bold">Continue Shopping</a>
+    <div class="alert alert-light rounded-pill border mt-4 mb-3">
+        <b>Free & Fast arriving by <span class="text-success">Monday</span></b>
+        &nbsp;Order within 23 hours, 53 minutes, 50 seconds
+    </div>
+    <div class="row align-items-center mb-4 p-3 shadow-sm rounded" style="background:#fff;">
+        <div class="col-md-3">
+            <img src="{% static 'image/shoes.jpg' %}" class="img-fluid rounded" alt="Comfy Steps">
+        </div>
+        <div class="col-md-6">
+            <b>Comfy Steps</b>
+            <div class="text-secondary small">Harlan Mens Tan Boat Shoe</div>
+            <div class="my-2">MRP ₹ 2,799</div>
+        </div>
+        <div class="col-md-3">
+            <select class="form-select mb-2">
+                <option>Size (41)</option>
+                <!-- other sizes -->
+            </select>
+            <select class="form-select mb-2">
+                <option>Quantity (1)</option>
+                <!-- other qty -->
+            </select>
+            <button class="btn btn-link text-danger p-0" title="remove"><i class="bi bi-trash"></i> Remove</button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between mb-2">
+        <div>
+            <b>Summary</b><br>
+            <div>Total</div>
+            <div>Delivery</div>
+        </div>
+        <div class="text-end">
+            <br>
+            <div>₹ 2,799</div>
+            <div class="text-success">Free</div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end mb-2">
+        <a href="#" class="text-muted small mx-2">Delivery & return information <i class="bi bi-truck"></i></a>
+    </div>
+    <form method="get" action="{% url 'checkout' %}">
+        <button type="submit" class="btn btn-dark w-100 mb-3" style="background:#34534a;">
+            <i class="bi bi-lock"></i>&nbsp; Checkout Securely
+        </button>
+    </form>
+    <div><b>Express Checkout</b></div>
+    <div class="d-grid gap-2 my-2">
+        <button class="btn btn-outline-secondary">GPay</button>
+        <button class="btn btn-outline-secondary"><span class="fw-bold text-primary">Pay</span><span style="color:#253b80;">Pal</span></button>
+        <button class="btn btn-outline-secondary">clearpay</button>
+        <button class="btn btn-outline-secondary fw-bold">Klarna</button>
+    </div>
+</div>
+{% endblock %}
