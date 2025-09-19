@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-4fpvcpwocn$bh@3m19c#*9v^lj^k5t!lrstm!ui0iccty@!&1+
 DEBUG = False
 
 ALLOWED_HOSTS = ["https://shoe-websites.onrender.com/",
+                 'localhost',
+                 '127.0.0.1'
                 
                 ]
 
